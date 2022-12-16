@@ -322,8 +322,8 @@ template {
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 600px) {
   .container {
-    padding: 15px;
+    padding: 0 15px;
   }
 }

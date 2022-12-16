@@ -56,10 +56,7 @@
   );
 }
 
-.item:hover:after {
-  opacity: 0.3;
-  border-color: var(--white_shade);
-}
+
 
 .item::before {
   content: "";
@@ -121,9 +118,7 @@
   background-repeat: no-repeat, no-repeat;
 }
 
-.item:hover::before {
-  opacity: 1;
-}
+
 
 .text {
   font-family: "MuseoSansCyrl";
@@ -144,6 +139,17 @@
   font-weight: 700;
 }
 
-.item:hover > .text {
-  color: var(--white);
+@media (min-width: 960px) {
+  .item:hover > .text {
+    color: var(--white);
+  }
+
+  .item:hover:after {
+  opacity: 0.3;
+  border-color: var(--white_shade);
+}
+
+  .item:hover::before {
+  opacity: 1;
+}
 }

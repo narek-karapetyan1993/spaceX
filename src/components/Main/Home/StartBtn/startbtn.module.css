@@ -17,7 +17,7 @@
   height: var(--boxH);
   padding: 0 22px;
 
-  transition: background-color .3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 
   background-image: linear-gradient(
       transparent var(--borderH),
@@ -62,8 +62,10 @@
   background-image: url("assets/images/toRocket.png");
 }
 
-.button:hover {
-  background-color: var(--secondary);
+@media (min-width: 960px) {
+  .button:hover {
+    background-color: var(--secondary);
+  }
 }
 
 @media (max-width: 1200px) {

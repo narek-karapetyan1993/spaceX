@@ -18,6 +18,8 @@
 
 .closeBtn {
   display: none;
+  right: 150%;
+  transition: right 0.5s ease-in-out;
 }
 
 .navLink,
@@ -31,14 +33,16 @@
   transition: color 0.3s ease-in-out;
 }
 
-.navLink:hover,
-.activeLink:hover {
-  color: #6e6b6b;
-}
+@media (min-width: 960px) {
+  .navLink:hover::after,
+  .activeLink:hover::after {
+    background-color: var(--grey);
+  }
 
-.navLink:hover::after,
-.activeLink:hover::after {
-  background-color: var(--grey);
+  .navLink:hover,
+  .activeLink:hover {
+    color: #6e6b6b;
+  }
 }
 
 .activeLink::after,
@@ -64,10 +68,12 @@
 @media (max-width: 1200px) {
   .list {
     flex-direction: column;
+    align-items: center;
+    min-width: 40vw;
     background-color: #000000;
-    padding: 100px 100px 50px;
+    padding: 100px 0 50px;
     position: absolute;
-
+    z-index: 9;
     right: 0;
     top: 0;
     border-bottom-left-radius: 20px;
@@ -85,7 +91,7 @@
 
   .listHidden {
     position: absolute;
-    right: -100%;
+    right: -150%;
   }
 
   .closeBtnShow {
@@ -106,9 +112,6 @@
     width: 35px;
     height: 35px;
     margin-left: auto;
-  }
-
-  .burgerBtn {
   }
 
   .burgerLine {
@@ -137,5 +140,13 @@
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 600px) {
+  .list {
+    min-width: 100vw;
+    border-bottom-right-radius: 20px;
+  }
+
+  .closeBtnShow {
+    right: 15px;
+  }
 }

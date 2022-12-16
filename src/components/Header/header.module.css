@@ -6,17 +6,20 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
+  height: 100%;
 }
 
 .logo {
   flex: 0 1 315px;
+  min-height: 100px;
 }
 
 .nav {
   flex: 0 1 685px;
 }
 
-/* @media (max-width: 1200px) {
-  .nav {
+@media (max-width: 1200px) {
+  .logo {
+    min-height: 100px;
   }
-} */
+}

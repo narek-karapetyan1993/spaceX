@@ -14,3 +14,9 @@
   font-weight: 700;
   text-transform: uppercase;
 }
+
+@media (max-width: 600px) {
+  .header::first-line {
+  font-size: 40px;
+}
+}
