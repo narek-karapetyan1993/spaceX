@@ -1,0 +1,55 @@
+.logo {
+  --boxW: 310px;
+  --boxH: 100px;
+  --borderW: 7px;
+  --borderH: 7px;
+  --borderSize: 1px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--boxW);
+  height: var(--boxH);
+  padding: 0 22px;
+  background-image: linear-gradient(
+      var(--white) var(--borderH),
+      var(--grey_shade) var(--borderH),
+      var(--grey_shade) calc(var(--boxH) - var(--borderH)),
+      var(--white) calc(var(--boxH) - var(--borderH))
+    ),
+    linear-gradient(
+      90deg,
+      var(--white) var(--borderW),
+      var(--grey_shade) var(--borderW),
+      var(--grey_shade) calc(var(--boxW) - var(--borderW)),
+      var(--white) calc(var(--boxW) - var(--borderW))
+    ),
+    linear-gradient(
+      var(--white) var(--borderH),
+      var(--grey_shade) var(--borderH),
+      var(--grey_shade) calc(var(--boxH) - var(--borderH)),
+      var(--white) calc(var(--boxH) - var(--borderH))
+    ),
+    linear-gradient(
+      90deg,
+      var(--white) var(--borderW),
+      var(--grey_shade) var(--borderW),
+      var(--grey_shade) calc(var(--boxW) - var(--borderW)),
+      var(--white) calc(var(--boxW) - var(--borderW))
+    );
+  background-size: var(--borderSize) var(--boxH), var(--boxW) var(--borderSize),
+    var(--borderSize) var(--boxH), var(--boxW) var(--borderSize);
+  background-position: 0 0, 0 0, 100% 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+}

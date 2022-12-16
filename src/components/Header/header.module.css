@@ -1,0 +1,22 @@
+.header {
+  background-color: var(--black_shade);
+  height: 100px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  flex: 0 1 315px;
+}
+
+.nav {
+  flex: 0 1 685px;
+}
+
+/* @media (max-width: 1200px) {
+  .nav {
+  }
+} */

@@ -1,0 +1,73 @@
+.button {
+  --boxW: 180px;
+  --boxH: 35px;
+  --borderW: 7px;
+  --borderH: 7px;
+  --borderSize: 1px;
+}
+
+.button {
+  font-size: 14px;
+  font-weight: 100;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--boxW);
+  height: var(--boxH);
+  padding: 0 22px;
+
+  transition: background-color .3s ease-in-out;
+
+  background-image: linear-gradient(
+      transparent var(--borderH),
+      transparent var(--borderH),
+      var(--dark_blue) calc(var(--boxH) - var(--borderH)),
+      var(--white) calc(var(--boxH) - var(--borderH))
+    ),
+    linear-gradient(
+      90deg,
+      transparent var(--borderW),
+      transparent var(--borderW),
+      var(--dark_blue) calc(var(--boxW) - var(--borderW)),
+      var(--white) calc(var(--boxW) - var(--borderW))
+    ),
+    linear-gradient(
+      var(--white) var(--borderH),
+      var(--dark_blue) var(--borderH),
+      transparent calc(var(--boxH) - var(--borderH)),
+      transparent calc(var(--boxH) - var(--borderH))
+    ),
+    linear-gradient(
+      90deg,
+      var(--white) var(--borderW),
+      var(--dark_blue) var(--borderW),
+      transparent calc(var(--boxW) - var(--borderW)),
+      transparent calc(var(--boxW) - var(--borderW))
+    );
+  background-size: var(--borderSize) var(--boxH), var(--boxW) var(--borderSize),
+    var(--borderSize) var(--boxH), var(--boxW) var(--borderSize);
+  background-position: 0 0, 0 0, 100% 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+}
+
+.button::after {
+  content: "";
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 410px;
+  height: 60px;
+  background-image: url("assets/images/toRocket.png");
+}
+
+.button:hover {
+  background-color: var(--secondary);
+}
+
+@media (max-width: 1200px) {
+  .button::after {
+    display: none;
+  }
+}

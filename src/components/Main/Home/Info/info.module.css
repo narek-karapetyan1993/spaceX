@@ -1,0 +1,149 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 180px);
+  grid-template-rows: auto;
+  gap: 10px;
+  text-align: center;
+  max-width: 370px;
+}
+
+.item {
+  padding: 35px;
+  position: relative;
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.item:nth-child(1)::after {
+  background: radial-gradient(
+    circle farthest-side at 100% 100%,
+    var(--white) 0.5%,
+    transparent 70%
+  );
+}
+
+.item:nth-child(2)::after {
+  background: radial-gradient(
+    circle farthest-side at 0% 100%,
+    var(--white) 0.5%,
+    transparent 70%
+  );
+}
+
+.item:nth-child(3)::after {
+  background: radial-gradient(
+    circle farthest-side at 100% 0%,
+    var(--white) 0.5%,
+    transparent 70%
+  );
+}
+
+.item:nth-child(4)::after {
+  background: radial-gradient(
+    circle farthest-side at 0% 0%,
+    var(--white) 0.5%,
+    transparent 70%
+  );
+}
+
+.item:hover:after {
+  opacity: 0.3;
+  border-color: var(--white_shade);
+}
+
+.item::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  --boxS: 100%;
+  --borderS: 2px;
+}
+
+.item:nth-child(1)::before {
+  background-image: linear-gradient(
+      transparent 30%,
+      var(--white_shade) var(--boxS)
+    ),
+    linear-gradient(90deg, transparent 30%, var(--white_shade) var(--boxS));
+  background-size: var(--borderS), var(--boxS) var(--borderS);
+  background-position: 100% 0%, 100% 100%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.item:nth-child(2)::before {
+  background-image: linear-gradient(
+      transparent 30%,
+      var(--white_shade) var(--boxS)
+    ),
+    linear-gradient(260deg, transparent 30%, var(--white_shade) var(--boxS));
+  background-size: var(--borderS), var(--boxS) var(--borderS);
+  background-position: 0% 100%, 0% 100%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.item:nth-child(3)::before {
+  background-image: linear-gradient(
+      0deg,
+      transparent 30%,
+      var(--white_shade) var(--boxS)
+    ),
+    linear-gradient(90deg, transparent 30%, var(--white_shade) var(--boxS));
+  background-size: var(--borderS), var(--boxS) var(--borderS);
+  background-position: 100% 100%, 0% 0%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.item:nth-child(4)::before {
+  background-image: linear-gradient(
+      0deg,
+      transparent 30%,
+      var(--white_shade) var(--boxS)
+    ),
+    linear-gradient(260deg, transparent 30%, var(--white_shade) var(--boxS));
+  background-size: var(--borderS), var(--boxS) var(--borderS);
+  background-position: 0% 100%, 0 0;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.item:hover::before {
+  opacity: 1;
+}
+
+.text {
+  font-family: "MuseoSansCyrl";
+  font-size: 16px;
+  font-weight: 100;
+  color: var(--white_shade);
+  transition: color 0.1s ease-in-out;
+}
+
+.text > strong {
+  display: block;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.text > strong > small {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.item:hover > .text {
+  color: var(--white);
+}

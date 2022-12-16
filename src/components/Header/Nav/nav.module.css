@@ -1,0 +1,141 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav {
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.closeBtn {
+  display: none;
+}
+
+.navLink,
+.activeLink {
+  position: relative;
+  font-family: "MuseoSansCyrl";
+  font-size: 16px;
+  font-weight: 300;
+  padding: 5px 0;
+  white-space: nowrap;
+  transition: color 0.3s ease-in-out;
+}
+
+.navLink:hover,
+.activeLink:hover {
+  color: #6e6b6b;
+}
+
+.navLink:hover::after,
+.activeLink:hover::after {
+  background-color: var(--grey);
+}
+
+.activeLink::after,
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: transparent;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.activeLink {
+  color: var(--white_shade);
+}
+
+.burgerHidden {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .list {
+    flex-direction: column;
+    background-color: #000000;
+    padding: 100px 100px 50px;
+    position: absolute;
+
+    right: 0;
+    top: 0;
+    border-bottom-left-radius: 20px;
+    transition: right 0.9s ease-in-out;
+  }
+
+  .item {
+    padding: 20px 0;
+  }
+
+  .navLink,
+  .activeLink {
+    font-size: 30px;
+  }
+
+  .listHidden {
+    position: absolute;
+    right: -100%;
+  }
+
+  .closeBtnShow {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    right: 50px;
+    top: 30px;
+    width: 35px;
+    height: 35px;
+    background-image: url("assets/images/close.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .burger {
+    width: 35px;
+    height: 35px;
+    margin-left: auto;
+  }
+
+  .burgerBtn {
+  }
+
+  .burgerLine {
+    display: block;
+    position: relative;
+    width: 35px;
+    height: 3px;
+    background-color: var(--white);
+  }
+
+  .burgerLine::before,
+  .burgerLine::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--white);
+  }
+
+  .burgerLine::before {
+    top: -10px;
+  }
+  .burgerLine::after {
+    bottom: -10px;
+  }
+}
+
+@media (max-width: 620px) {
+}

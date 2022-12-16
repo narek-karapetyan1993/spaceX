@@ -1,0 +1,10 @@
+.layout {
+  background-image: url("assets/images/bg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100% auto;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}

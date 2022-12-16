@@ -1,0 +1,16 @@
+.header {
+  font-size: 23px;
+  font-weight: 300;
+  color: transparent;
+
+  background: linear-gradient(to left, var(--secondary), var(--white));
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.header::first-line {
+  font-size: 54px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
